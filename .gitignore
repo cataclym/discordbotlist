@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# TS build output
+/api/
+/client/
+/internal/
+/webhooks/
+/index*
+
+# macOS hidden files
+.DS_Store

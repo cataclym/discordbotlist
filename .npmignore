@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# TS source files
+/src/
+
+# macOS hidden files
+.DS_Store
