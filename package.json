@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/discordbots/dbl.js.git"
+    "url": "git+https://github.com/discordbots/discordbotlist.git"
   },
   "keywords": [
     "discord",
@@ -29,9 +29,9 @@
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/discordbots/dbl.js/issues"
+    "url": "https://github.com/discordbots/discordbotlist/issues"
   },
-  "homepage": "https://github.com/discordbots/dbl.js#readme",
+  "homepage": "https://github.com/discordbots/discordbotlist#readme",
   "dependencies": {
     "express": "^4.18.2",
     "tiny-typed-emitter": "^2.1.0",
