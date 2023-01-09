@@ -1,10 +1,10 @@
-# dbl.js
+# discordbotlist
 
 Easily add support for voting and display your bot's stats on [discordbotlist.com](https://discordbotlist.com) with just a few lines of code. This package provides support out of the box for [discord.js](https://www.npmjs.com/package/discord.js) and [eris](https://www.npmjs.com/package/eris) bots, but can easily be adapted to work with any library of your choosing.
 
 ## Installation and Requirements
 
-This package requires **Node 16** or newer. If you're using discord.js v14, you should already meet this requirement. Install dbl.js using:
+This package requires **Node 16** or newer. If you're using discord.js v14, you should already meet this requirement. Install discordbotlist using:
 
 ```
 npm i --save discordbotlist
@@ -70,11 +70,11 @@ dbl.startPosting(/* optional interval, defaults to every hour */);
 
 ## Setting up Voting
 
-dbl.js can be used to implement voting by either exposing a webhook endpoint discordbotlist will call, or periodically checking for recent votes. The former is recommended in most cases and should be preferred if it can be used for your bot.
+This package can be used to implement voting by either exposing a webhook endpoint discordbotlist will call, or periodically checking for recent votes. The former is recommended in most cases and should be preferred if it can be used for your bot.
 
 ### Using Webhooks
 
-dbl.js provides [express](https://www.npmjs.com/package/express) middleware that can be used to easily set up vote rewards using webhooks.
+This package provides [express](https://www.npmjs.com/package/express) middleware that can be used to easily set up vote rewards using webhooks.
 
 ### Using Webhooks (with a Client)
 
