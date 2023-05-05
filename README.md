@@ -128,6 +128,19 @@ dbl.on("vote", vote => {
 });
 ```
 
+## Post Bot Commands
+
+If your bot uses slash commands, you can display your bot's commands on DBL! You can post your commands to DBL the same way you post them to Discord. Use `Client#postBotCommands` to post your bot's commands:
+
+```ts
+dbl.postBotCommands([
+    {
+        name: "help",
+        description: "View a list of the bot's commands.",
+    },
+]);
+```
+
 ## Discord Bot List API
 
 This package also provides a strongly typed interface for interacting with DBL's REST API if desired. All types and functionality for this API wrapper is accessible from `discordbotlist/api`. For example, to manually post a bot's stats without a Client instance:

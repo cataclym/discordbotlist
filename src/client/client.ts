@@ -1,8 +1,8 @@
-import type { Client as DjsClient } from "discord.js";
+import type { Client as DjsClient, RESTPutAPIApplicationCommandsJSONBody } from "discord.js";
 import type { Client as ErisClient } from "eris";
 import { clearInterval, setInterval } from "node:timers";
 import { TypedEmitter } from "tiny-typed-emitter";
-import { BotStats, fetchRecentVotes, postBotStats, RecentVotes, Vote } from "../api";
+import { BotStats, RecentVotes, Vote, fetchRecentVotes, postBotCommands, postBotStats } from "../api";
 import { DBLError } from "../internal";
 import { upvoteListener } from "../webhooks";
 import { BaseAdapter, DjsAdapter, ErisAdapter } from "./adapters";
@@ -32,6 +32,20 @@ export class DBLClient<T extends BaseAdapter> extends TypedEmitter<DBLClientEven
             return await fetchRecentVotes(this.apiKey, this.adapter.botId);
         } catch (e) {
             const error = new DBLError("Failed to fetch recent votes", {
+                client: this,
+                error: e,
+            });
+            this.emit("error", error, this);
+            throw error;
+        }
+    }
+
+    /** Post the slash commands your bot supports. These will be shown on your bot page. */
+    async postBotCommands(commands: RESTPutAPIApplicationCommandsJSONBody): Promise<void> {
+        try {
+            await postBotCommands(this.apiKey, this.adapter.botId, commands);
+        } catch (e) {
+            const error = new DBLError("Failed to post bot commands", {
                 client: this,
                 error: e,
             });
