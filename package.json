@@ -1,6 +1,6 @@
 {
   "name": "discordbotlist",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Integrate with discordbotlist.com and support voting rewards and promote your bot's stats on the website.",
   "main": "index.js",
   "types": "index.d.ts",
