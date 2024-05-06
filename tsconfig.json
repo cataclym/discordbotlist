@@ -9,7 +9,6 @@
         "declarationMap": true,
         "outDir": "./",
         "importHelpers": true,
-        "importsNotUsedAsValues": "error",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
