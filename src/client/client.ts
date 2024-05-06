@@ -1,11 +1,10 @@
 import type { Client as DjsClient, RESTPutAPIApplicationCommandsJSONBody } from "discord.js";
-import type { Client as ErisClient } from "eris";
 import { clearInterval, setInterval } from "node:timers";
 import { TypedEmitter } from "tiny-typed-emitter";
 import { BotStats, RecentVotes, Vote, fetchRecentVotes, postBotCommands, postBotStats } from "../api";
 import { DBLError } from "../internal";
 import { upvoteListener } from "../webhooks";
-import { BaseAdapter, DjsAdapter, ErisAdapter } from "./adapters";
+import { BaseAdapter, DjsAdapter } from "./adapters";
 
 const WEBHOOKS_SUGGESTION =
     "[discordbotlist] More than 500 users have voted for your bot in the past 12 hours. You may want to consider switching to webhooks to provide a more seamless experience for your users. Learn more at https://docs.discordbotlist.com/vote-webhooks";
@@ -124,8 +123,4 @@ export class DBLClient<T extends BaseAdapter> extends TypedEmitter<DBLClientEven
 
 export function createDjsClient(apiKey: string, client: DjsClient<true>) {
     return new DBLClient(apiKey, new DjsAdapter(client));
-}
-
-export function createErisClient(apiKey: string, client: ErisClient) {
-    return new DBLClient(apiKey, new ErisAdapter(client));
 }
