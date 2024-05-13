@@ -1,6 +1,6 @@
 {
   "name": "discordbotlist-djs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Integrate with discordbotlist.com and support voting rewards and promote your bot's stats on the website.",
   "main": "index.js",
   "types": "index.d.ts",
