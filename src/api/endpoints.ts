@@ -1,5 +1,5 @@
 import type { RESTPutAPIApplicationCommandsJSONBody } from "discord.js";
-import { fetch, Headers } from "discord.js/node_modules/undici";
+import { fetch, Headers } from "undici";
 import { DBLError } from "../internal";
 import type { APIRecentUpvotesResponse, BotStats, RecentVotes } from "./types";
 
